@@ -1,10 +1,9 @@
 from setuptools import setup
 
 setup(name='Boruta',
-      version='0.1.5',
+      version='0.3.0',
       description='Python Implementation of Boruta Feature Selection',
-      url='https://github.com/danielhomola/boruta_py',
-      download_url='https://github.com/danielhomola/boruta_py/tarball/0.1.5',
+      url='https://github.com/scikit-learn-contrib/boruta_py',
       author='Daniel Homola',
       author_email='dani.homola@gmail.com',
       license='BSD 3 clause',
