@@ -138,15 +138,13 @@ class BorutaPy(BaseEstimator, TransformerMixin):
     Examples
     --------
     
-    import pandas as pd
+	import numpy as np
+    from boruta import __path__, BorutaPy
     from sklearn.ensemble import RandomForestClassifier
-    from boruta import BorutaPy
     
     # load X and y
-    # NOTE BorutaPy accepts numpy arrays only, hence the .values attribute
-    X = pd.read_csv('examples/test_X.csv', index_col=0).values
-    y = pd.read_csv('examples/test_y.csv', header=None, index_col=0).values
-    y = y.ravel()
+	X = np.genfromtxt(__path__[0]+'/examples/test_X.csv', delimiter=',')
+    y = np.genfromtxt(__path__[0]+'/examples/test_y.csv', delimiter=',')
     
     # define random forest classifier, with utilising all cores and
     # sampling in proportion to y labels
@@ -447,7 +445,7 @@ class BorutaPy(BaseEstimator, TransformerMixin):
             to_accept *= to_accept2
             to_reject *= to_reject2
         else:
-            # as in th original Boruta, we simply do bonferroni correction
+            # as in the original Boruta, we simply do bonferroni correction
             # with the total n_feat in each iteration
             to_accept = to_accept_ps <= self.alpha / float(len(dec_reg))
             to_reject = to_reject_ps <= self.alpha / float(len(dec_reg))
