@@ -3,7 +3,7 @@
 """
 Author: Daniel Homola <dani.homola@gmail.com>
 
-Original code and method by: Miron B Kursa, https://m2.icm.edu.pl/boruta/
+Original code and method by: Miron B Kursa, https://notabug.org/mbq/Boruta/wiki/FAQ
 
 License: BSD 3 clause
 """
@@ -55,7 +55,7 @@ class BorutaPy(BaseEstimator, TransformerMixin):
 
     For more, see the docs of these functions, and the examples below.
 
-    Original code and method by: Miron B Kursa, https://m2.icm.edu.pl/boruta/
+    Original code and method by: Miron B Kursa, https://notabug.org/mbq/Boruta/wiki/FAQ
 
     Boruta is an all relevant feature selection method, while most other are
     minimal optimal; this means it tries to find all features carrying
@@ -138,12 +138,12 @@ class BorutaPy(BaseEstimator, TransformerMixin):
     Examples
     --------
     
-	import numpy as np
+    import numpy as np
     from boruta import __path__, BorutaPy
     from sklearn.ensemble import RandomForestClassifier
     
     # load X and y
-	X = np.genfromtxt(__path__[0]+'/examples/test_X.csv', delimiter=',')
+    X = np.genfromtxt(__path__[0]+'/examples/test_X.csv', delimiter=',')
     y = np.genfromtxt(__path__[0]+'/examples/test_y.csv', delimiter=',')
     
     # define random forest classifier, with utilising all cores and
